@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grupo Gonçalves</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome para Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div id="top"></div>
+
+    <nav id="navbar">
+        <a href="#top" class="logo-link">
+            <img src="./imagens/LogoG.png" alt="Logo Grupo Gonçalves" class="logo">
+        </a>
+        <ul class="nav-links" id="nav-menu">
+            <li><a href="#top">Home</a></li>
+            <li><a href="#quem-somos">Quem Somos</a></li>
+            <li><a href="#produtos">Produtos</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+        <div class="menu-toggle" id="mobile-menu" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <div class="hero-brand">
+                    <img src="./imagens/GrupoGoncalvesPreview.png" alt="Grupo Gonçalves Logotipo" class="hero-logo">
+                </div>
+                <h2 class="hero-tagline">Feno de qualidade para seu Rebanho</h2>
+                <div class="hero-actions">
+                    <a href="#produtos" class="btn-cta">Veja Nossos Produtos</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="quem-somos" class="section-padding reveal">
+        <div class="container">
+            <div class="text-content">
+                <span class="subtitle">Nossa História</span>
+                <h2>Tradição e Tecnologia no Campo</h2>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p>O <strong>Grupo Gonçalves</strong> nasceu da força de uma família apaixonada pelo campo e comprometida com a qualidade no agronegócio. Há mais de 10 anos no ramo, construímos nossa trajetória com dedicação, trabalho sério e respeito aos nossos clientes e parceiros.
+Especializados no plantio de sementes e na produção e comercialização de feno de alta qualidade, buscamos sempre oferecer produtos que atendam às necessidades do produtor rural, garantindo confiança, eficiência e excelente resultado no campo.
+Ao longo dos anos, expandimos nossa atuação e hoje realizamos vendas para todo o Brasil, levando a tradição, o compromisso e a excelência do <strong>Grupo Gonçalves</strong> para diversas regiões do país.
+Mais do que uma empresa, somos um grupo familiar que valoriza raízes sólidas, inovação e relacionamento próximo com cada cliente. Nosso objetivo é continuar crescendo, contribuindo para o desenvolvimento do agronegócio brasileiro e oferecendo sempre o melhor em sementes e feno.</p>
+                    </div>
+                    <div class="about-image">
+                        <img src="./imagens/Lavoura.jpeg" alt="Nossa Produção" class="img-responsive">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <section id="produtos" class="section-padding secao-produtos reveal">
+        <div class="container">
+            <span class="subtitle">Catálogo</span>
+            <h2 class="section-title">Soluções para seu Rebanho</h2>
+            <div class="produtos-grid">
+                <div class="card-produto">
+                    <img src="./imagens/RoloDeFeno.jpeg" alt="Rolo de Feno">
+                    <div class="card-info">
+                        <h3>Feno Premium Selecionado</h3>
+                        <button class="btn-product" onclick="window.location.href='https://wa.me/5518999999999?text=Olá! Gostaria de solicitar um orçamento para compra de feno.'">Solicitar Orçamento</button>
+                    </div>
+                </div>
+                <div class="card-produto">
+                    <img src="./imagens/CaminhaodeFeno.jpeg" alt="Logística e Entrega">
+                    <div class="card-info">
+                        <h3> Qualidade do Campo até Você</h3>
+                        <button class="btn-product" onclick="window.location.href='https://wa.me/5518999999999?text=Olá! Gostaria de solicitar um orçamento para compra de feno.'">Solicitar Orçamento</button>
+                    </div>
+                </div>
+                <div class="card-produto">
+                    <img src="./imagens/FenonoCaminhao.jpeg" alt="Cargas de Feno">
+                    <div class="card-info">
+                        <h3>Confiança em Cada Carga</h3>
+                        <button class="btn-product" onclick="window.location.href='https://wa.me/5518999999999?text=Olá! Gostaria de solicitar um orçamento para compra de feno.'">Solicitar Orçamento</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </section>
+    </main>
+
+    <footer id="contato">
+        <div class="footer-content">
+            <h3>Siga nossas Redes Sociais</h3>
+            <div class="contatos-grid">
+                <a href="https://wa.me/5518991456393" class="contato-item" target="_blank">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <p>(18) 99145-6393</p>
+                </a>
+                
+                <a href="https://instagram.com/_grupogoncalves" class="contato-item" target="_blank">
+                    <i class="fa-brands fa-instagram"></i>
+                    <p>@_grupogoncalves</p>
+                </a>
+
+                <a href="https://maps.app.goo.gl/eBqQfRAm9Mj8WRmx9?g_st=aw" class="contato-item" target="_blank">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <p>Santo Anastácio - SP</p>
+                </a>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Grupo Gonçalves - Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Flutuante (Fora do Footer para melhor contexto de renderização) -->
+    <a href="https://wa.me/5518991456393?text=Olá! Gostaria de mais informações sobre o feno." class="whatsapp-float" target="_blank" aria-label="Fale conosco pelo WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span>Fale Conosco</span>
+    </a>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
