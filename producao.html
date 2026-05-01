@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nossa Produção - Grupo Gonçalves</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- CABEÇALHO DA PÁGINA DE PRODUÇÃO -->
+    <header>
+        <nav id="navbar" class="scrolled">
+            <a href="index.html#top" class="logo-link">
+                <img src="./imagens/LogoG.png" alt="Logo Grupo Gonçalves" class="logo">
+            </a>
+            <!-- NAVEGAÇÃO INTERNA -->
+            <ul class="nav-links" id="nav-menu">
+                <li><a href="index.html#top">Home</a></li>
+                <li><a href="index.html#quem-somos">Quem Somos</a></li>
+                <li><a href="index.html#produtos">Produtos</a></li>
+                <li><a href="index.html#contato">Contato</a></li>
+            </ul>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar" style="background-color: var(--primary);"></span>
+                <span class="bar" style="background-color: var(--primary);"></span>
+                <span class="bar" style="background-color: var(--primary);"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- CONTEÚDO DA PRODUÇÃO -->
+        <section class="section-padding producao-header">
+            <div class="container">
+                <span class="subtitle">Acompanhe cada etapa da nossa produção de feno</span>
+                <h2 class="section-title producao-title">Do Campo ao Carregamento</h2>
+
+                <!-- CARROSSEL DE IMAGENS -->
+                <div class="carousel-container">
+                    <button class="carousel-btn prev-btn hidden" aria-label="Imagem anterior">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    
+                    <div class="carousel-track-container">
+                        <ul class="carousel-track">
+                            <li class="carousel-slide">
+                                <img src="./imagens/Plantio.jpeg" alt="Preparação do solo e plantio">
+                            </li>
+                            <li class="carousel-slide">
+                                <img src="./imagens/GramaLlanero.jpeg" alt="Desenvolvimento da plantação">
+                            </li>
+                            <li class="carousel-slide">
+                                <img src="./imagens/TratornaRoca.jpeg" alt="Colheita de feno mecanizada">
+                            </li>
+                            <li class="carousel-slide">
+                                <img src="./imagens/RoloDeFeno.jpeg" alt="Fardos de feno prontos">
+                            </li>
+                            <li class="carousel-slide">
+                                <img src="./imagens/FenoTrator.jpeg" alt="Carregamento no campo">
+                            </li>
+                            <li class="carousel-slide">
+                                <img src="./imagens/FenonoCaminhao.jpeg" alt="Logística e transporte">
+                            </li>
+                            <li class="carousel-slide">
+                                <img src="./imagens/CarretadeFeno.jpeg" alt="Carga de feno de grande porte">
+                            </li>
+                            <li class="carousel-slide">
+                                <img src="./imagens/CaminhaoBranco.jpeg" alt="Caminhão pronto para entrega">
+                            </li>
+                            <li class="carousel-slide">
+                                <img src="./imagens/CaminhaoAzul.jpeg" alt="Distribuição nacional">
+                            </li>
+                        </ul>
+                    </div>
+
+                    <button class="carousel-btn next-btn" aria-label="Próxima imagem">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+
+                    <div class="carousel-indicators"></div>
+                </div>
+
+                <!-- CHAMADA PARA ORÇAMENTO -->
+                <div style="text-align: center; margin-top: 80px;">
+                    <p class="producao-cta-text">Gostou do que viu? Peça um orçamento agora mesmo e garanta o melhor feno.</p>
+                    <a href="https://wa.me/5518991456393" class="btn-cta producao-cta-button" target="_blank" rel="noopener noreferrer">Solicitar Cotação</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer id="contato">
+        <div class="footer-content">
+            <h3>Siga nossas Redes Sociais</h3>
+            <div class="contatos-grid">
+                <a href="https://wa.me/5518991456393" class="contato-item" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <p>(18) 99145-6393</p>
+                </a>
+                <a href="https://instagram.com/grupogoncalvesfeno" class="contato-item" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-instagram"></i>
+                    <p>@grupogoncalvesfeno</p>
+                </a>
+                <a href="https://maps.app.goo.gl/eBqQfRAm9Mj8WRmx9" class="contato-item" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <p>Santo Anastácio - SP</p>
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2018 Grupo Gonçalves - Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/5518991456393" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span>Fale Conosco</span>
+    </a>
+
+    <script src="script.js" defer></script>
+</body>
+</html>

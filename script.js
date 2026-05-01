@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // 2. Alternar Menu Mobile
+    // 2. Alternar Menu Mobile (Hambúrguer)
     mobileMenu.addEventListener('click', () => {
         navLinks.classList.toggle('active');
         mobileMenu.classList.toggle('is-active');
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
     });
 
-    // Fechar menu ao clicar em link (UX Mobile)
+    // Fechar menu ao clicar em link para melhor experiência mobile (UX)
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', () => {
             navLinks.classList.remove('active');
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
                 navLinks.classList.remove('active');
-                window.scrollTo({
+                window.scrollTo({ /* Nota: Ajustado para considerar a altura da navbar */
                     top: target.id === 'top' ? 0 : target.offsetTop - 80,
                     behavior: 'smooth'
                 });
@@ -58,4 +58,96 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // --- Lógica do Carrossel (Página Produção) ---
+    const track = document.querySelector('.carousel-track');
+    if (track) {
+        const slides = Array.from(track.children);
+        const nextButton = document.querySelector('.next-btn');
+        const prevButton = document.querySelector('.prev-btn');
+        const dotsNav = document.querySelector('.carousel-indicators');
+        
+        let currentIndex = 0;
+
+        // Configurar indicadores (pontos)
+        slides.forEach((_, index) => {
+            const dot = document.createElement('button');
+            dot.classList.add('indicator');
+            if (index === 0) dot.classList.add('active');
+            dotsNav.appendChild(dot);
+        });
+        const dots = Array.from(dotsNav.children);
+
+        const updateCarousel = () => {
+            // Obtém a largura do container para calcular o deslocamento corretamente
+            const slideWidth = track.parentElement.getBoundingClientRect().width;
+            
+            // No desktop o slideWidth é dividido por 3, no mobile por 1, etc.
+            // Mas como cada .carousel-slide tem flex-basis, o cálculo abaixo é mais seguro:
+            const offset = slides[currentIndex].offsetLeft;
+            track.style.transform = `translateX(-${offset}px)`;
+            
+            // Atualizar botões
+            const itemsVisible = window.innerWidth > 992 ? 3 : (window.innerWidth > 768 ? 2 : 1);
+            prevButton.classList.toggle('hidden', currentIndex === 0);
+            nextButton.classList.toggle('hidden', currentIndex >= slides.length - itemsVisible);
+            
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentIndex);
+            });
+        };
+
+        nextButton.addEventListener('click', () => {
+            const itemsVisible = window.innerWidth > 992 ? 3 : (window.innerWidth > 768 ? 2 : 1);
+            if (currentIndex < slides.length - itemsVisible) {
+                currentIndex++;
+                updateCarousel();
+            }
+        });
+
+        prevButton.addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateCarousel();
+            }
+        });
+
+        // Clique nos pontos
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                const itemsVisible = window.innerWidth > 992 ? 3 : (window.innerWidth > 768 ? 2 : 1);
+                if (index <= slides.length - itemsVisible) {
+                    currentIndex = index;
+                    updateCarousel();
+                }
+            });
+        });
+
+        // Suporte a Swipe (Arrastar)
+        let startX = 0;
+        let isDragging = false;
+
+        track.addEventListener('touchstart', e => {
+            startX = e.touches[0].clientX;
+            isDragging = true;
+        }, { passive: true });
+
+        track.addEventListener('touchend', e => {
+            if (!isDragging) return;
+            const endX = e.changedTouches[0].clientX;
+            const diff = startX - endX;
+
+            if (diff > 50) nextButton.click();
+            if (diff < -50) prevButton.click();
+            isDragging = false;
+        }, { passive: true });
+
+        // Ajustar no redimensionamento da tela
+        window.addEventListener('resize', () => {
+            currentIndex = 0; // Resetar para evitar erros de cálculo
+            updateCarousel();
+        });
+
+        updateCarousel();
+    }
 });
