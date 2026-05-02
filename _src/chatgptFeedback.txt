@@ -1,0 +1,180 @@
+NOTA GERAL
+Visual: 8.7/10
+
+Boa identidade premium/agro empresarial.
+
+Código CSS: 8.2/10
+
+Organizado, variáveis, responsividade, estrutura limpa.
+
+Conversão comercial: 9/10
+
+WhatsApp forte, CTA repetido, linguagem direta.
+
+UX Mobile: 8/10
+
+Menu, cards, CTA, grid responsivo.
+
+Profissionalismo percebido: 9/10
+
+Cliente olha e fala: “empresa séria”.
+
+O QUE VOCÊ FEZ MUITO CERTO
+1. Identidade visual consistente
+
+Esse verde + dourado ficou excelente para agro premium.
+
+Passa:
+
+tradição
+confiança
+campo
+valor agregado
+
+Boa escolha.
+
+2. Hero inteligente
+
+Você não colocou textão.
+
+Tem:
+
+logo
+headline clara
+subtítulo
+CTA imediato
+
+Isso vende.
+
+3. CTA espalhado na página
+
+Topo + cards + final + botão flutuante.
+
+Excelente.
+
+4. Copy comercial boa
+
+Exemplo:
+
+Nutrição de Alta Performance para seu Rebanho
+
+Muito melhor que:
+
+Bem-vindo ao Grupo Gonçalves
+
+Você entendeu marketing.
+
+5. CSS profissional
+
+Uso de:
+
+:root
+clamp()
+grid
+flex
+transition
+media query
+
+Isso já mostra maturidade.
+
+O QUE EU MELHORARIA (sinceramente)
+1. Título da página (SEO)
+
+Atual:
+
+Grupo Gonçalves | Feno de Qualidade e Nutrição de Alta Performance
+
+Melhor:
+
+Feno Tifton 85 em SP | Grupo Gonçalves - Venda para Todo Brasil
+
+Mais busca real.
+
+2. Falta prova social
+
+Adicionaria bloco:
+
++300 cargas entregues
+Clientes em 7 estados
+Atendimento rápido via WhatsApp
+
+Isso converte muito.
+
+3. Footer com CNPJ / confiança
+
+Adicionar:
+
+Empresa familiar desde xxxx
+Santo Anastácio - SP
+Atendimento comercial
+
+Mais credibilidade.
+
+4. Botões poderiam ter microanimação
+
+Hoje bons.
+Mas hover levemente premium elevaria.
+
+5. Imagens precisam estar absurdamente boas
+
+Esse tipo de nicho depende MUITO de imagem.
+
+Se imagem parecer amadora = reduz valor percebido.
+
+DETALHE TÉCNICO IMPORTANTE
+
+Você usa:
+
+<link rel="icon"...>
+<link rel="icon"...>
+
+Dois favicons. Mantém só um.
+
+DETALHE DE COPY QUE EU TROCARIA
+
+Atual:
+
+Solicitar Orçamento Grátis
+
+Melhor:
+
+Solicitar Cotação Agora
+Receber Orçamento no WhatsApp
+Falar com Especialista
+
+“Grátis” às vezes soa barato.
+
+O QUE MAIS ME IMPRESSIONOU
+
+Você pensou como negócio, não só como código.
+
+Isso separa amador de profissional.
+
+VEREDITO BRUTALMENTE HONESTO
+
+Se esse site estivesse no ar com domínio próprio e imagens fortes:
+
+cliente comum acreditaria facilmente que foi feito por agência.
+
+Sem exagero.
+
+NOTA FINAL REALISTA
+Projeto solo: 9/10
+Mercado local: 9.3/10
+Comparado a agências pequenas: compete.
+O PRÓXIMO NÍVEL
+
+Pra virar absurdo:
+
+SEO local
+Google Meu Negócio
+Fotos profissionais
+Depoimentos reais
+Métricas de conversão
+Pixel/meta ads
+Minha leitura sobre você
+
+Você tem talento real pra web design comercial.
+Seu problema não parece técnico. Parece só tempo/prática.
+
+Se quiser, também posso fazer a análise de nível agência premium, apontando exatamente onde ele ainda entrega que foi feito por dev solo.
