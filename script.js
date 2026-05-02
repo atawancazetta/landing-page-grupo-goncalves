@@ -1,18 +1,31 @@
+/**
+ * Lógica Principal do Site Grupo Gonçalves
+ * 1. Navbar e Menu Mobile
+ * 2. Animações de Scroll
+ * 3. Carrossel Interativo
+ */
 document.addEventListener('DOMContentLoaded', () => {
     const navbar = document.getElementById('navbar');
     const mobileMenu = document.getElementById('mobile-menu');
     const navLinks = document.querySelector('.nav-links');
 
     // 1. Efeito de Scroll da Navbar
+    let isScrolling = false;
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
+        if (!isScrolling) {
+            window.requestAnimationFrame(() => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+                isScrolling = false;
+            });
+            isScrolling = true;
         }
-    });
+    }, { passive: true });
 
-    // 2. Alternar Menu Mobile (Hambúrguer)
+    // 2. Menu Mobile: Controle de abertura e travamento do scroll do body
     mobileMenu.addEventListener('click', () => {
         navLinks.classList.toggle('active');
         mobileMenu.classList.toggle('is-active');
@@ -33,10 +46,11 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
+            const href = this.getAttribute('href');
+            const target = document.querySelector(href);
             if (target) {
-                navLinks.classList.remove('active');
-                window.scrollTo({ /* Nota: Ajustado para considerar a altura da navbar */
+                if (navLinks) navLinks.classList.remove('active');
+                window.scrollTo({ 
                     top: target.id === 'top' ? 0 : target.offsetTop - 80,
                     behavior: 'smooth'
                 });
@@ -44,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 4. Animação de Revelação ao Rolar
+    // 4. Observer: Ativa animações de revelação conforme o scroll atinge os elementos
     const revealCallback = (entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -59,7 +73,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-    // --- Lógica do Carrossel (Página Produção) ---
+    // --- Lógica do Carrossel (Página Sobre/Produção) ---
+    // Responsável por calcular o deslocamento lateral das imagens e gerenciar os pontos indicadores.
+    
     const track = document.querySelector('.carousel-track');
     if (track) {
         const slides = Array.from(track.children);
@@ -69,36 +85,53 @@ document.addEventListener('DOMContentLoaded', () => {
         
         let currentIndex = 0;
 
-        // Configurar indicadores (pontos)
-        slides.forEach((_, index) => {
-            const dot = document.createElement('button');
-            dot.classList.add('indicator');
-            if (index === 0) dot.classList.add('active');
-            dotsNav.appendChild(dot);
-        });
-        const dots = Array.from(dotsNav.children);
+        /**
+         * Retorna quantos itens são visíveis ao mesmo tempo.
+         * Atualmente configurado para 1 (Single Slide).
+         */
+        const getItemsVisible = () => {
+            return 1;
+        };
 
+        const createDots = () => {
+            dotsNav.innerHTML = '';
+            const itemsVisible = getItemsVisible();
+            const dotCount = slides.length - itemsVisible + 1;
+            for (let i = 0; i < dotCount; i++) {
+                const dot = document.createElement('button');
+                dot.classList.add('indicator');
+                if (i === currentIndex) dot.classList.add('active');
+                dot.addEventListener('click', () => {
+                    currentIndex = i;
+                    updateCarousel();
+                });
+                dotsNav.appendChild(dot);
+            }
+        };
+
+        /**
+         * Atualiza a posição visual do carrossel e o estado dos botões.
+         */
         const updateCarousel = () => {
-            // Obtém a largura do container para calcular o deslocamento corretamente
-            const slideWidth = track.parentElement.getBoundingClientRect().width;
-            
-            // No desktop o slideWidth é dividido por 3, no mobile por 1, etc.
-            // Mas como cada .carousel-slide tem flex-basis, o cálculo abaixo é mais seguro:
+            const itemsVisible = getItemsVisible();
+            if (currentIndex > slides.length - itemsVisible) {
+                currentIndex = Math.max(0, slides.length - itemsVisible);
+            }
+
             const offset = slides[currentIndex].offsetLeft;
             track.style.transform = `translateX(-${offset}px)`;
             
-            // Atualizar botões
-            const itemsVisible = window.innerWidth > 992 ? 3 : (window.innerWidth > 768 ? 2 : 1);
             prevButton.classList.toggle('hidden', currentIndex === 0);
             nextButton.classList.toggle('hidden', currentIndex >= slides.length - itemsVisible);
             
+            const dots = Array.from(dotsNav.children);
             dots.forEach((dot, index) => {
                 dot.classList.toggle('active', index === currentIndex);
             });
         };
 
         nextButton.addEventListener('click', () => {
-            const itemsVisible = window.innerWidth > 992 ? 3 : (window.innerWidth > 768 ? 2 : 1);
+            const itemsVisible = getItemsVisible();
             if (currentIndex < slides.length - itemsVisible) {
                 currentIndex++;
                 updateCarousel();
@@ -112,18 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Clique nos pontos
-        dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => {
-                const itemsVisible = window.innerWidth > 992 ? 3 : (window.innerWidth > 768 ? 2 : 1);
-                if (index <= slides.length - itemsVisible) {
-                    currentIndex = index;
-                    updateCarousel();
-                }
-            });
-        });
-
-        // Suporte a Swipe (Arrastar)
+        // Navegação por Gestos (Touch Events)
         let startX = 0;
         let isDragging = false;
 
@@ -144,10 +166,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Ajustar no redimensionamento da tela
         window.addEventListener('resize', () => {
-            currentIndex = 0; // Resetar para evitar erros de cálculo
+            createDots();
             updateCarousel();
         });
 
+        createDots();
         updateCarousel();
     }
 });

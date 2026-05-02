@@ -4,7 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grupo Gonçalves | Feno de Qualidade e Nutrição de Alta Performance</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Grupo Gonçalves - Venda de Feno Tifton 85 e Nutrição Animal Premium</title>
+    <meta name="description" content="Compre feno de alta qualidade (Tipos A, B e C) diretamente do produtor. O Grupo Gonçalves oferece feno Tifton 85 nutritivo para equinos e gado com entrega em todo o Brasil.">
     <link rel="icon" type="image/png" href="/assets/icons/favicon.png">
     <link rel="stylesheet" href="style.css">
     <!-- Font Awesome para Ícones -->
@@ -12,46 +15,47 @@
 </head>
 
 <body>
-
-    <!-- CABEÇALHO -->
+    <!-- CABEÇALHO: Navegação Fixa -->
     <header id="top">
         <nav id="navbar">
-            <a href="#top" class="logo-link">
-                <img src="./assets/LogoG.png" alt="Logo Grupo Gonçalves" class="logo">
+            <a href="#top" class="logo-link" title="Ir para o topo">
+                <img src="./assets/LogoG.png" alt="Logotipo oficial do Grupo Gonçalves - Especialistas em Feno" class="logo">
             </a>
             
             <!-- MENU DE NAVEGAÇÃO -->
             <ul class="nav-links" id="nav-menu">
                 <li><a href="#top">Home</a></li>
-                <li><a href="#quem-somos">Quem Somos</a></li>
+                <li><a href="sobre.html#quem-somos">Quem Somos</a></li>
                 <li><a href="#produtos">Produtos</a></li>
                 <li><a href="#contato">Contato</a></li>
             </ul>
-            <div class="menu-toggle" id="mobile-menu" aria-label="Abrir menu" aria-expanded="false"
+
+            <!-- Botão de Menu Mobile -->
+            <div class="menu-toggle" id="mobile-menu" aria-label="Abrir menu de navegação" aria-expanded="false"
                 aria-controls="nav-menu">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
             </div>
         </nav>
-
     </header>
 
     <main>
+        <!-- SEÇÃO HERO: Destaque Principal -->
         <section id="home" class="hero">
             <div class="hero-content">
                 <div class="hero-brand">
-                    <img src="./assets/GrupoGoncalvesPreview.png" alt="Grupo Gonçalves Fenos" class="hero-logo">
+                    <img src="./assets/GrupoGoncalvesPreview.png" alt="Destaque da produção de feno premium Grupo Gonçalves" class="hero-logo">
                 </div>
-                <h1 class="hero-tagline">Nutrição de Alta Performance para seu Rebanho</h1>
-                <p class="hero-subtext">Produção própria de Feno Tipos A, B e C com <span>venda para todo o Brasil.</span></p>
+                <h1 class="hero-tagline">Garantia de Nutrição e Estoque para seu Rebanho</h1>
+                <p class="hero-subtext">Produção própria de feno Tipo A, B e C com alto padrão de qualidade e <span>disponibilidade para todo o Brasil.</span></p>
                 <div class="hero-actions">
-                    <a href="https://wa.me/5518991456393?text=Olá! Vim pelo site e gostaria de um orçamento." class="btn-cta" target="_blank" rel="noopener noreferrer">Solicitar Orçamento Grátis</a>
+                    <a href="https://wa.me/5518991456393?text=Olá! Gostaria de consultar a disponibilidade de carga e preços." class="btn-cta" target="_blank" rel="noopener noreferrer">Solicitar Cotação Agora</a>
                 </div>
             </div>
         </section>
 
-        <!-- FAIXA DE BENEFÍCIOS -->
+        <!-- FAIXA DE BENEFÍCIOS: Diferenciais da Empresa -->
         <section class="benefits-strip">
             <div class="container benefits-grid">
                 <div class="benefit-item">
@@ -78,76 +82,50 @@
             </div>
         </section>
 
-        <!-- SEÇÃO QUEM SOMOS -->
-        <section id="quem-somos" class="section-padding reveal">
-            <div class="container">
-                <div class="text-content">
-                    <span class="subtitle">Nossa História</span>
-                    <h2>Tradição e Tecnologia no Campo</h2>
-                    <div class="about-grid">
-                        <div class="about-text">
-                            <p>Especialista na produção e comercialização de feno, o <strong>Grupo Gonçalves</strong> une tradição e tecnologia no campo. Com raízes familiares e <strong>mais de 10 anos de experiência</strong>, evoluímos investindo em técnicas modernas para garantir um produto com alto padrão de qualidade.</p>
-                            <p>Controlamos todas as etapas do processo do plantio ao carregamento assegurando padronização, eficiência e confiança em cada carga, atendendo produtores em todo o Brasil.</p>
-                            <p>Mais do que feno, entregamos resultado, produtividade e rentabilidade para o pecuarista.</p>
-                            <a href="producoes.html" class="btn-secondary btn-about-cta" target="_blank" rel="noopener noreferrer">Conheça nossa Produção de Feno</a>
-                        </div>
-                        <div class="about-image">
-                            <img src="./assets/about-image.png" alt="Nossa Produção" class="img-responsive">
-                            <div class="experience-badge"><strong>+10 Anos</strong> de Campo</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SEÇÃO PRODUTOS / CATÁLOGO -->
+        <!-- SEÇÃO PRODUTOS: Catálogo de Feno -->
         <section id="produtos" class="section-padding secao-produtos reveal">
             <div class="container">
                 <span class="subtitle">Catálogo</span>
-                <h2 class="section-title">Escolha o Feno ideal para sua necessidade</h2>
+                <h2 class="section-title">Qualidade e Variedade em Feno para seu Rebanho</h2>
                 <div class="produtos-grid">
                     <div class="card-produto">
                         <div class="badge-tipo">Tipo A</div>
-                        <img src="./assets/FenoTrator.jpeg" alt="Feno no Trator">
+                        <img src="./assets/FenoTrator.jpeg" alt="Produção de Feno Premium Tifton 85" loading="lazy">
                         <div class="card-info">
                             <h3>Premium (Tifton 85)</h3>
-                            <p>Máximo teor proteico, cor verde vibrante e livre de impurezas. Ideal para equinos de elite e gado leiteiro.</p>
-                            <button class="btn-product" onclick="window.open('https://wa.me/5518991456393?text=Olá! Quero saber mais sobre o Feno Tipo A.', '_blank', 'noopener,noreferrer')">Solicitar
-                                Orçamento</button>
+                            <p>Folhas finas, alta digestibilidade e cor verde intensa. Nutrição superior para cavalos de prova e alto rendimento.</p>
+                            <button class="btn-product" onclick="window.open('https://wa.me/5518991456393?text=Olá! Gostaria de um orçamento para Feno Tipo A.', '_blank', 'noopener,noreferrer')">Solicitar Cotação</button>
                         </div>
                     </div>
                     <div class="card-produto">
                         <div class="badge-tipo">Tipo B</div>
-                        <img src="./assets/RoloDeFeno.jpeg" alt="Rolo de Feno">
+                        <img src="./assets/RoloDeFeno.jpeg" alt="Fardos de Feno Tipo B Comercial Superior" loading="lazy">
                         <div class="card-info">
                             <h3>Comercial Superior</h3>
-                            <p>Excelente equilíbrio entre fibra e proteína. Ótima aceitação e custo-benefício para manutenção de rebanhos.</p>
-                            <button class="btn-product" onclick="window.open('https://wa.me/5518991456393?text=Olá! Quero saber mais sobre o Feno Tipo B.', '_blank', 'noopener,noreferrer')">Solicitar
-                                Orçamento</button>
+                            <p>Equilíbrio ideal entre fibra e proteína. Fardos padronizados com excelente aceitação para gado de corte e leite.</p>
+                            <button class="btn-product" onclick="window.open('https://wa.me/5518991456393?text=Olá! Gostaria de um orçamento para Feno Tipo B.', '_blank', 'noopener,noreferrer')">Solicitar Cotação</button>
                         </div>
                     </div>
                     <div class="card-produto">
                         <div class="badge-tipo">Tipo C</div>
-                        <img src="./assets/CaminhaodeFeno.jpeg" alt="Feno no Caminhão">
+                        <img src="./assets/CaminhaodeFeno.jpeg" alt="Caminhão carregado com Feno Tipo C Econômico" loading="lazy">
                         <div class="card-info">
                             <h3>Econômico (Volume)</h3>
-                            <p>Indicado para suplementação volumosa. Alta disponibilidade e o menor preço por tonelada para grandes lotes.</p>
-                            <button class="btn-product" onclick="window.open('https://wa.me/5518991456393?text=Olá! Quero saber mais sobre o Feno Tipo C.', '_blank', 'noopener,noreferrer')">Solicitar
-                                Orçamento</button>
+                            <p>Ideal para manutenção de volume e períodos de seca. O melhor custo-benefício para grandes rebanhos e suplementação.</p>
+                            <button class="btn-product" onclick="window.open('https://wa.me/5518991456393?text=Olá! Gostaria de um orçamento para Feno Tipo C.', '_blank', 'noopener,noreferrer')">Solicitar Cotação</button>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- CHAMADA FINAL (CTA) -->
+        <!-- CHAMADA FINAL (CTA): Conversão para WhatsApp -->
         <section class="cta-final section-padding">
             <div class="container">
                 <h2>Pronto para elevar a nutrição do seu rebanho?</h2>
-                <p><span>Nossa equipe está preparada para atender produtores de todo o Brasil. Fale conosco e garanta o melhor feno para sua produção.</span></p>
+                <p><span>Atendimento técnico especializado. Clique abaixo e receba sua cotação personalizada em poucos minutos.</span></p>
                 <a href="https://wa.me/5518991456393?text=Olá! Gostaria de um orçamento personalizado." class="btn-cta-large" target="_blank" rel="noopener noreferrer">
-                    <!--Alterado para melhor conversão e diminuir botão-->
-                    <i class="fa-brands fa-whatsapp"></i> Solicitar Orçamento
+                    <i class="fa-brands fa-whatsapp"></i> Falar com um Especialista Agora
                 </a>
                 <div class="trust-icons">
                     <span><i class="fa-solid fa-check"></i> Orçamento sem compromisso</span>
@@ -157,7 +135,7 @@
         </section>
     </main>
 
-    <!-- RODAPÉ -->
+    <!-- RODAPÉ: Redes Sociais e Direitos -->
     <footer id="contato">
         <div class="footer-content">
             <h3>Siga nossas Redes Sociais</h3>
@@ -181,7 +159,7 @@
         </div>
     </footer>
 
-    <!-- WhatsApp Flutuante (Fora do Footer para melhor contexto de renderização) -->
+    <!-- Widget Flutuante do WhatsApp -->
     <a href="https://wa.me/5518991456393?text=Olá! Gostaria de mais informações sobre o feno." class="whatsapp-float"
         target="_blank" rel="noopener noreferrer" aria-label="Fale conosco pelo WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
