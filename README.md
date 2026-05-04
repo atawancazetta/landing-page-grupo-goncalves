@@ -8,7 +8,7 @@ Este site foi projetado para transmitir a tradição e a tecnologia do Grupo Gon
 
 ## 📸 Visual do Site
 
-![Página Completa](./assets/PaginaCompleta.png)
+![Página Completa](./assets/ImagemReadme.jpeg)
 
 ## 🔗 Link de Acesso
 
