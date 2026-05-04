@@ -112,7 +112,7 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: var(--white);
+    color: var(--accent);
     text-transform: uppercase;
     letter-spacing: 1.5px;
     transition: var(--transition);
@@ -120,7 +120,7 @@ nav ul li a {
 }
 
 nav.scrolled ul li a {
-    color: var(--primary);
+    color: var(--accent);
 }
 
 nav ul li a:hover {
@@ -159,7 +159,7 @@ nav ul li a:hover::after {
 }
 
 nav.scrolled .bar {
-    background-color: var(--primary);
+    background-color: var(--accent);
 }
 
 .menu-toggle.is-active .bar:nth-child(1) {
