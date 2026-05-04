@@ -1,15 +1,10 @@
-/**
- * Lógica Principal do Site Grupo Gonçalves
- * 1. Navbar e Menu Mobile
- * 2. Animações de Scroll
- * 3. Carrossel Interativo
- */
+
 document.addEventListener('DOMContentLoaded', () => {
-    const navbar = document.getElementById('navbar');
-    const mobileMenu = document.getElementById('mobile-menu');
+    const navbar = document.getElementById('navbar'); 
+    const mobileMenu = document.getElementById('mobile-menu'); 
     const navLinks = document.querySelector('.nav-links');
 
-    // 1. Efeito de Scroll da Navbar
+    // Navbar e Menu Mobile Efeito de Scroll da Navbar
     let isScrolling = false;
     window.addEventListener('scroll', () => {
         if (!isScrolling) {
@@ -25,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }, { passive: true });
 
-    // 2. Menu Mobile: Controle de abertura e travamento do scroll do body
+    // Animações de Scroll - Menu Mobile: Controle de abertura e travamento do scroll do body
     mobileMenu.addEventListener('click', () => {
         navLinks.classList.toggle('active');
         mobileMenu.classList.toggle('is-active');
@@ -42,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 3. Rolagem Suave para Navegação
+    // Carrossel Interativo - Rolagem Suave para Navegação
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
@@ -58,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 4. Observer: Ativa animações de revelação conforme o scroll atinge os elementos
+    // Ativa animações de revelação conforme o scroll atinge os elementos
     const revealCallback = (entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -73,8 +68,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-    // --- Lógica do Carrossel (Página Sobre/Produção) ---
-    // Responsável por calcular o deslocamento lateral das imagens e gerenciar os pontos indicadores.
+
+    // Carrossel - Responsável por calcular o deslocamento lateral das imagens e gerenciar os pontos indicadores.
     
     const track = document.querySelector('.carousel-track');
     if (track) {
@@ -85,10 +80,8 @@ document.addEventListener('DOMContentLoaded', () => {
         
         let currentIndex = 0;
 
-        /**
-         * Retorna quantos itens são visíveis ao mesmo tempo.
-         * Atualmente configurado para 1 (Single Slide).
-         */
+      // Retorna quantos itens são visíveis ao mesmo tempo, Atualmente configurado para 1 (Single Slide).
+         
         const getItemsVisible = () => {
             return 1;
         };
@@ -109,9 +102,9 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         };
 
-        /**
-         * Atualiza a posição visual do carrossel e o estado dos botões.
-         */
+
+         // Atualiza a posição visual do carrossel e o estado dos botões.
+        
         const updateCarousel = () => {
             const itemsVisible = getItemsVisible();
             if (currentIndex > slides.length - itemsVisible) {
