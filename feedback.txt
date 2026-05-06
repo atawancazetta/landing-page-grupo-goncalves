@@ -7,6 +7,7 @@ Performance: O uso de preconnect para fontes e loading="lazy" nas imagens abaixo
 Acessibilidade: A inclusão de atributos ARIA no menu mobile (aria-label, aria-expanded) é uma prática recomendada de alto nível.
 
 Conclusão Final
-O projeto está em um nível profissional muito alto. A estrutura é limpa, o código é fácil de manter e a estratégia de marketing está bem integrada ao desenvolvimento. Após aplicar os ajustes nos links dos produtos (para torná-los links reais em vez de triggers de JavaScript), o site estará pronto para produção com máxima eficiência.
+O projeto está em um nível profissional muito alto. A estrutura é limpa, o código é fácil de manter e a estratégia de marketing está bem integrada ao desenvolvimento. 
+Após aplicar os ajustes nos links dos produtos (para torná-los links reais em vez de triggers de JavaScript), o site estará pronto para produção com máxima eficiência.
 
 Parabéns pelo trabalho! O uso de animações (reveal) via JavaScript (que imagino estar no seu script.js) dará o toque final de modernidade que o agronegócio premium exige.
