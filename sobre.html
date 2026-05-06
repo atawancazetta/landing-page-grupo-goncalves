@@ -1,28 +1,31 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <title>Sobre o Grupo Gonçalves | Produção Técnica de Feno de Alta Performance</title>
-    <meta name="description" content="Conheça a história e o processo tecnológico do Grupo Gonçalves na produção de feno. Mais de 10 anos de excelência e valor nutricional para o seu rebanho.">
+    <meta name="description"
+        content="Conheça a história e o processo tecnológico do Grupo Gonçalves na produção de feno. Mais de 10 anos de excelência e valor nutricional para o seu rebanho.">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         /* --- DESIGN E ORGANIZAÇÃO DA PÁGINA DE PRODUÇÕES --- */
-        
+
         .production-main-section {
-            padding: 40px 0 100px; 
+            padding: 40px 0 100px;
             background-color: var(--bg-light);
-            scroll-margin-top: 100px; /* Garante que o âncora considere a altura do nav */
+            scroll-margin-top: 100px;
+            /* Garante que o âncora considere a altura do nav */
         }
 
         /* Estilo para o Cabeçalho Simplificado e Botão Voltar */
         .header-navigation {
             padding: 25px 0;
             background-color: var(--bg-light);
-            border-bottom: 1px solid rgba(0,0,0,0.05);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
         }
 
         .btn-back {
@@ -44,7 +47,8 @@
         }
 
         .production-container {
-            max-width: 1100px; /* Alinhado com a largura do carrossel para consistência */
+            max-width: 1100px;
+            /* Alinhado com a largura do carrossel para consistência */
             margin: 0 auto;
             padding: 0 20px;
         }
@@ -60,7 +64,8 @@
         .production-content-text {
             max-width: 850px;
             width: 100%;
-            margin: 0 auto 60px; /* Centraliza o container e dá espaço para o carrossel */
+            margin: 0 auto 60px;
+            /* Centraliza o container e dá espaço para o carrossel */
             text-align: center;
         }
 
@@ -117,12 +122,32 @@
             max-width: 1100px;
             margin: 0 auto;
         }
-        .carousel-track-container { overflow: hidden; border-radius: 12px; background: #fff; box-shadow: var(--shadow); }
-        .carousel-track { display: flex; list-style: none; padding: 0; margin: 0; transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1); }
-        .carousel-slide { flex: 0 0 100%; padding: 0; box-sizing: border-box; }
+
+        .carousel-track-container {
+            overflow: hidden;
+            border-radius: 12px;
+            background: #fff;
+            box-shadow: var(--shadow);
+        }
+
+        .carousel-track {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .carousel-slide {
+            flex: 0 0 100%;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         .carousel-slide img {
             width: 100%;
-            height: auto; /* Mantém a proporção original da imagem */
+            height: auto;
+            /* Mantém a proporção original da imagem */
             aspect-ratio: 16 / 10;
             object-fit: contain;
             background-color: #f5f5f5;
@@ -132,33 +157,79 @@
             border-radius: 8px;
             box-sizing: border-box;
         }
+
         .carousel-btn {
-            position: absolute; top: 50%; transform: translateY(-50%);
-            width: 50px; height: 50px; border-radius: 50%; border: none;
-            background: var(--primary); color: white; cursor: pointer; z-index: 10;
-            display: flex; align-items: center; justify-content: center;
-            transition: var(--transition); box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: none;
+            background: var(--primary);
+            color: white;
+            cursor: pointer;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
-        .carousel-btn:hover { background: var(--accent); transform: translateY(-50%) scale(1.1); }
-        .prev-btn { left: -25px; }
-        .next-btn { right: -25px; }
-        .carousel-btn.hidden { display: none; }
-        .carousel-indicators { display: flex; justify-content: center; gap: 12px; margin-top: 30px; }
-        .indicator { width: 12px; height: 12px; border-radius: 50%; border: none; background: rgba(11, 41, 29, 0.15); cursor: pointer; transition: var(--transition); }
-        .indicator.active { background: var(--accent); width: 30px; border-radius: 10px; }
+
+        .carousel-btn:hover {
+            background: var(--accent);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .prev-btn {
+            left: -25px;
+        }
+
+        .next-btn {
+            right: -25px;
+        }
+
+        .carousel-btn.hidden {
+            display: none;
+        }
+
+        .carousel-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 30px;
+        }
+
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            border: none;
+            background: rgba(11, 41, 29, 0.15);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .indicator.active {
+            background: var(--accent);
+            width: 30px;
+            border-radius: 10px;
+        }
 
         /* --- ESTILO DA ÁREA DE CTA (CHAMADA PARA AÇÃO) --- */
         .production-cta-area {
             text-align: center;
             padding: 70px 40px;
-            background: #fcfaf7; /* Fundo leve e elegante para destacar a conversão */
+            background: #fcfaf7;
+            /* Fundo leve e elegante para destacar a conversão */
             border-radius: 20px;
             box-shadow: var(--shadow);
             border: 1px solid rgba(11, 41, 29, 0.05);
             max-width: 900px;
             margin: 0 auto;
         }
-        
+
         .production-cta-area p {
             font-size: 1.3rem;
             margin-bottom: 40px;
@@ -169,7 +240,7 @@
             margin-left: auto;
             margin-right: auto;
         }
-        
+
         .production-cta-area .btn-cta {
             padding: 20px 60px;
             font-size: 1.05rem;
@@ -193,23 +264,84 @@
 
         /* --- RESPONSIVIDADE ADICIONAL --- */
         @media (max-width: 1200px) {
-            .prev-btn { left: 10px; }
-            .next-btn { right: 10px; }
+            .prev-btn {
+                left: 10px;
+            }
+
+            .next-btn {
+                right: 10px;
+            }
         }
 
         @media (max-width: 768px) {
-            .production-main-section { padding: 30px 0 40px; }
-            .production-content-text { margin-bottom: 40px; }
-            .production-content-text h2 { font-size: 2.2rem; }
-            .production-content-text p { font-size: 1.05rem; }
-            .carousel-slide img { height: 300px; }
-            .carousel-section { margin-bottom: 60px; }
-            .production-cta-area { padding: 50px 25px; margin-top: 40px; }
-            .production-cta-area p { font-size: 1.1rem; }
-            .carousel-btn { width: 40px; height: 40px; }
+            .production-main-section {
+                padding: 30px 0 40px;
+            }
+
+            .production-content-text {
+                margin-bottom: 40px;
+            }
+
+            .production-content-text h2 {
+                font-size: 2.2rem;
+            }
+
+            .production-content-text p {
+                font-size: 1.05rem;
+            }
+
+            .carousel-slide img {
+                height: 300px;
+            }
+
+            .carousel-section {
+                margin-bottom: 60px;
+            }
+
+            .production-cta-area {
+                padding: 50px 25px;
+                margin-top: 40px;
+            }
+
+            .production-cta-area p {
+                font-size: 1.1rem;
+            }
+
+            .carousel-btn {
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        /* mobile pequeno */
+
+        @media (max-width:480px) {
+            .production-cta-area .btn-cta {
+                position: relative;
+                color: transparent;
+                font-size: 0.95rem;
+
+            }
+
+            .production-cta-area .btn-cta::after {
+                content: "SOLICITAR AGORA";
+                position: absolute;
+                inset: 0;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                color: #fff;
+                font-size: 0.95rem;
+                font-weight: 700;
+
+            }
+
         }
     </style>
 </head>
+
 <body>
     <!-- NAVEGAÇÃO SUPERIOR: Botão de Retorno -->
     <header class="header-navigation" id="navbar">
@@ -228,14 +360,21 @@
         <section id="quem-somos" class="production-main-section">
             <div class="production-container">
                 <div class="production-integration-grid">
-                    
+
                     <!-- CONTEÚDO TEXTUAL -->
                     <div class="production-content-text reveal">
                         <span class="subtitle">Nossa História</span>
                         <h1>Uma Trajetória de Excelência e Confiança na Produção de Feno</h1>
-                        <p>Com mais de uma década de dedicação ao agronegócio, o <strong>Grupo Gonçalves</strong> consolidou-se como referência na produção e comercialização de feno de alta performance. Nossa trajetória é marcada pela união estratégica entre a tradição das raízes familiares e o investimento constante em processos tecnológicos de ponta.</p>
-                        <p>Dominamos o ciclo completo de produção: desde o preparo técnico do solo e o plantio selecionado, até a colheita mecanizada e a logística de carregamento. Cada etapa é rigorosamente monitorada para garantir a padronização, a pureza e o valor nutricional superior que o seu rebanho exige.</p>
-                        <p class="highlight-text">Confira abaixo nossa galeria e acompanhe o rigor técnico que transforma trabalho em resultados reais para pecuaristas em todo o Brasil.</p>
+                        <p>Com mais de uma década de dedicação ao agronegócio, o <strong>Grupo Gonçalves</strong>
+                            consolidou-se como referência na produção e comercialização de feno de alta performance.
+                            Nossa trajetória é marcada pela união estratégica entre a tradição das raízes familiares e o
+                            investimento constante em processos tecnológicos de ponta.</p>
+                        <p>Dominamos o ciclo completo de produção: desde o preparo técnico do solo e o plantio
+                            selecionado, até a colheita mecanizada e a logística de carregamento. Cada etapa é
+                            rigorosamente monitorada para garantir a padronização, a pureza e o valor nutricional
+                            superior que o seu rebanho exige.</p>
+                        <p class="highlight-text">Confira abaixo nossa galeria e acompanhe o rigor técnico que
+                            transforma trabalho em resultados reais para pecuaristas em todo o Brasil.</p>
                     </div>
 
                     <!-- GALERIA DE PRODUÇÃO (Carrossel Interativo) -->
@@ -244,29 +383,37 @@
                             <button class="carousel-btn prev-btn hidden" aria-label="Imagem anterior">
                                 <i class="fas fa-chevron-left"></i>
                             </button>
-                            
+
                             <div class="carousel-track-container">
                                 <ul class="carousel-track">
                                     <li class="carousel-slide">
-                                        <img src="./assets/Plantio.jpeg" alt="Preparação técnica do solo para plantio de feno" loading="lazy">
+                                        <img src="./assets/Plantio.jpeg"
+                                            alt="Preparação técnica do solo para plantio de feno" loading="lazy">
                                     </li>
                                     <li class="carousel-slide">
-                                        <img src="./assets/GramaLlanero.jpeg" alt="Campo de grama Llanero para produção de feno de alta qualidade" loading="lazy">
+                                        <img src="./assets/GramaLlanero.jpeg"
+                                            alt="Campo de grama Llanero para produção de feno de alta qualidade"
+                                            loading="lazy">
                                     </li>
                                     <li class="carousel-slide">
-                                        <img src="./assets/TratornaRoca.jpeg" alt="Colheita mecanizada de feno com tecnologia de ponta" loading="lazy">
+                                        <img src="./assets/TratornaRoca.jpeg"
+                                            alt="Colheita mecanizada de feno com tecnologia de ponta" loading="lazy">
                                     </li>
                                     <li class="carousel-slide">
-                                        <img src="./assets/RoloDeFeno.jpeg" alt="Fardos de feno prontos para armazenamento" loading="lazy">
+                                        <img src="./assets/RoloDeFeno.jpeg"
+                                            alt="Fardos de feno prontos para armazenamento" loading="lazy">
                                     </li>
-                                    
+
                                     <li class="carousel-slide">
-                                        <img src="./assets/FenonoCaminhao.jpeg" alt="Logística e transporte de feno para todo o Brasil" loading="lazy">
+                                        <img src="./assets/FenonoCaminhao.jpeg"
+                                            alt="Logística e transporte de feno para todo o Brasil" loading="lazy">
                                     </li>
                                     <li class="carousel-slide">
-                                        <img src="./assets/CarretadeFeno.jpeg" alt="Carregamento de feno em carreta de grande porte para entrega" loading="lazy">
+                                        <img src="./assets/CarretadeFeno.jpeg"
+                                            alt="Carregamento de feno em carreta de grande porte para entrega"
+                                            loading="lazy">
                                     </li>
-                                   
+
                                 </ul>
                             </div>
 
@@ -280,8 +427,10 @@
 
                 <!-- ÁREA DE CONVERSÃO (CTA) -->
                 <div class="production-cta-area reveal">
-                    <p>Gostou do que viu? Solicite sua cotação agora e garanta o feno ideal para a nutrição do seu rebanho.</p>
-                    <a href="https://wa.me/5518991456393" class="btn-cta" target="_blank" rel="noopener noreferrer">Solicitar Orçamento Gratuito</a>
+                    <p>Gostou do que viu? Solicite sua cotação agora e garanta o feno ideal para a nutrição do seu
+                        rebanho.</p>
+                    <a href="https://wa.me/5518991456393" class="btn-cta" target="_blank"
+                        rel="noopener noreferrer">Solicitar Orçamento Gratuito</a>
                 </div>
             </div>
         </section>
@@ -296,11 +445,13 @@
                     <i class="fa-brands fa-whatsapp"></i>
                     <p>(18) 99145-6393</p>
                 </a>
-                <a href="https://instagram.com/grupogoncalvesfeno" class="contato-item" target="_blank" rel="noopener noreferrer">
+                <a href="https://instagram.com/grupogoncalvesfeno" class="contato-item" target="_blank"
+                    rel="noopener noreferrer">
                     <i class="fa-brands fa-instagram"></i>
                     <p>@grupogoncalvesfeno</p>
                 </a>
-                <a href="https://maps.app.goo.gl/eBqQfRAm9Mj8WRmx9?g_st=aw" class="contato-item" target="_blank" rel="noopener noreferrer">
+                <a href="https://maps.app.goo.gl/eBqQfRAm9Mj8WRmx9?g_st=aw" class="contato-item" target="_blank"
+                    rel="noopener noreferrer">
                     <i class="fa-solid fa-location-dot"></i>
                     <p>Santo Anastácio - SP</p>
                 </a>
@@ -318,4 +469,5 @@
 
     <script src="script.js" defer></script>
 </body>
+
 </html>
