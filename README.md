@@ -1,14 +1,14 @@
 # Grupo Gonçalves
 
-O projeto **Grupo Gonçalves** é uma plataforma digital profissional desenvolvida para apresentar a empresa e facilitar a comercialização de feno de alta performance (Tipos A, B e C) para pecuaristas e produtores em todo o Brasil.
+O projeto **Grupo Gonçalves** é uma landing page profissional desenvolvida para apresentar a empresa e facilitar a comercialização de feno de alta performance (Tipos A, B e C) para pecuaristas e produtores em todo o Brasil.
 
 ## 📄 Sobre o Projeto
 
-Este site foi projetado para transmitir a tradição e a tecnologia do Grupo Gonçalves, que possui mais de 10 anos de experiência no campo. A interface foca em apresentar a qualidade da produção própria, o catálogo detalhado de produtos e converter visitantes em clientes através de chamadas diretas para orçamento via WhatsApp.
+Esta landing page foi feita para transmitir a tradição e a tecnologia do Grupo Gonçalves, que possui mais de 10 anos de experiência no campo. A interface foca em apresentar a qualidade da produção própria, o catálogo detalhado de produtos e converter visitantes em clientes através de chamadas diretas para orçamento via WhatsApp.
 
 ## 📸 Visual do Site
 
-![Página Completa](./assets/ImagemReadme.jpeg)
+![Página Completa](./assets/ImagemReadme.png)
 
 ## 🔗 Link de Acesso
 
