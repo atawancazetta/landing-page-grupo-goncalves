@@ -1,169 +1,98 @@
-
 document.addEventListener('DOMContentLoaded', () => {
-    const navbar = document.getElementById('navbar'); 
-    const mobileMenu = document.getElementById('mobile-menu'); 
-    const navLinks = document.querySelector('.nav-links');
+    const navbar = document.getElementById('navbar');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navLinks = document.getElementById('nav-menu');
 
-    // Navbar e Menu Mobile Efeito de Scroll da Navbar
-    let isScrolling = false;
+    let scrollFrame = null;
+    const updateNavbar = () => navbar?.classList.toggle('scrolled', window.scrollY > 50);
+    updateNavbar();
     window.addEventListener('scroll', () => {
-        if (!isScrolling) {
-            window.requestAnimationFrame(() => {
-                if (window.scrollY > 50) {
-                    navbar.classList.add('scrolled');
-                } else {
-                    navbar.classList.remove('scrolled');
-                }
-                isScrolling = false;
-            });
-            isScrolling = true;
-        }
+        if (scrollFrame) return;
+        scrollFrame = window.requestAnimationFrame(() => {
+            updateNavbar();
+            scrollFrame = null;
+        });
     }, { passive: true });
 
-    // Animações de Scroll - Menu Mobile: Controle de abertura e travamento do scroll do body
-    mobileMenu.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        mobileMenu.classList.toggle('is-active');
-        mobileMenu.setAttribute('aria-expanded', navLinks.classList.contains('active'));
-        document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
-    });
-
-    // Fechar menu ao clicar em link para melhor experiência mobile (UX)
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            navLinks.classList.remove('active');
-            mobileMenu.classList.remove('is-active');
-            document.body.style.overflow = '';
-        });
-    });
-
-    // Carrossel Interativo - Rolagem Suave para Navegação
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const href = this.getAttribute('href');
-            const target = document.querySelector(href);
-            if (target) {
-                if (navLinks) navLinks.classList.remove('active');
-                window.scrollTo({ 
-                    top: target.id === 'top' ? 0 : target.offsetTop - 80,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-
-    // Ativa animações de revelação conforme o scroll atinge os elementos
-    const revealCallback = (entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-            }
-        });
+    const closeMenu = () => {
+        navLinks?.classList.remove('active');
+        mobileMenu?.classList.remove('is-active');
+        mobileMenu?.setAttribute('aria-expanded', 'false');
+        mobileMenu?.setAttribute('aria-label', 'Abrir menu de navegação');
+        document.body.style.overflow = '';
     };
 
-    const revealObserver = new IntersectionObserver(revealCallback, {
-        threshold: 0.15
+    mobileMenu?.addEventListener('click', () => {
+        const isOpen = navLinks.classList.toggle('active');
+        mobileMenu.classList.toggle('is-active', isOpen);
+        mobileMenu.setAttribute('aria-expanded', String(isOpen));
+        mobileMenu.setAttribute('aria-label', isOpen ? 'Fechar menu de navegação' : 'Abrir menu de navegação');
+        document.body.style.overflow = isOpen ? 'hidden' : '';
     });
 
-    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+    navLinks?.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+    document.addEventListener('keydown', event => { if (event.key === 'Escape') closeMenu(); });
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 960 && navLinks?.classList.contains('active')) closeMenu();
+    }, { passive: true });
 
+    if ('IntersectionObserver' in window) {
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px' });
+        document.querySelectorAll('.reveal').forEach(element => revealObserver.observe(element));
+    } else {
+        document.querySelectorAll('.reveal').forEach(element => element.classList.add('active'));
+    }
 
-    // Carrossel - Responsável por calcular o deslocamento lateral das imagens e gerenciar os pontos indicadores.
-    
     const track = document.querySelector('.carousel-track');
     if (track) {
-        const slides = Array.from(track.children);
+        const slides = [...track.children];
         const nextButton = document.querySelector('.next-btn');
         const prevButton = document.querySelector('.prev-btn');
-        const dotsNav = document.querySelector('.carousel-indicators');
-        
+        const carousel = document.querySelector('.carousel-container');
         let currentIndex = 0;
-
-      // Retorna quantos itens são visíveis ao mesmo tempo, Atualmente configurado para 1 (Single Slide).
-         
-        const getItemsVisible = () => {
-            return 1;
-        };
-
-        const createDots = () => {
-            dotsNav.innerHTML = '';
-            const itemsVisible = getItemsVisible();
-            const dotCount = slides.length - itemsVisible + 1;
-            for (let i = 0; i < dotCount; i++) {
-                const dot = document.createElement('button');
-                dot.classList.add('indicator');
-                if (i === currentIndex) dot.classList.add('active');
-                dot.addEventListener('click', () => {
-                    currentIndex = i;
-                    updateCarousel();
-                });
-                dotsNav.appendChild(dot);
-            }
-        };
-
-
-         // Atualiza a posição visual do carrossel e o estado dos botões.
-        
-        const updateCarousel = () => {
-            const itemsVisible = getItemsVisible();
-            if (currentIndex > slides.length - itemsVisible) {
-                currentIndex = Math.max(0, slides.length - itemsVisible);
-            }
-
-            const offset = slides[currentIndex].offsetLeft;
-            track.style.transform = `translateX(-${offset}px)`;
-            
-            prevButton.classList.toggle('hidden', currentIndex === 0);
-            nextButton.classList.toggle('hidden', currentIndex >= slides.length - itemsVisible);
-            
-            const dots = Array.from(dotsNav.children);
-            dots.forEach((dot, index) => {
-                dot.classList.toggle('active', index === currentIndex);
-            });
-        };
-
-        nextButton.addEventListener('click', () => {
-            const itemsVisible = getItemsVisible();
-            if (currentIndex < slides.length - itemsVisible) {
-                currentIndex++;
-                updateCarousel();
-            }
-        });
-
-        prevButton.addEventListener('click', () => {
-            if (currentIndex > 0) {
-                currentIndex--;
-                updateCarousel();
-            }
-        });
-
-        // Navegação por Gestos (Touch Events)
         let startX = 0;
-        let isDragging = false;
 
-        track.addEventListener('touchstart', e => {
-            startX = e.touches[0].clientX;
-            isDragging = true;
-        }, { passive: true });
-
-        track.addEventListener('touchend', e => {
-            if (!isDragging) return;
-            const endX = e.changedTouches[0].clientX;
-            const diff = startX - endX;
-
-            if (diff > 50) nextButton.click();
-            if (diff < -50) prevButton.click();
-            isDragging = false;
-        }, { passive: true });
-
-        // Ajustar no redimensionamento da tela
-        window.addEventListener('resize', () => {
-            createDots();
-            updateCarousel();
+        slides.forEach((slide, index) => {
+            slide.setAttribute('aria-hidden', String(index !== 0));
         });
 
-        createDots();
+        const updateCarousel = () => {
+            track.style.transform = `translateX(-${currentIndex * 100}%)`;
+            prevButton.classList.toggle('hidden', currentIndex === 0);
+            nextButton.classList.toggle('hidden', currentIndex === slides.length - 1);
+            slides.forEach((slide, index) => slide.setAttribute('aria-hidden', String(index !== currentIndex)));
+        };
+
+        nextButton.addEventListener('click', () => { if (currentIndex < slides.length - 1) { currentIndex += 1; updateCarousel(); } });
+        prevButton.addEventListener('click', () => { if (currentIndex > 0) { currentIndex -= 1; updateCarousel(); } });
+        track.addEventListener('touchstart', event => { startX = event.touches[0].clientX; }, { passive: true });
+        track.addEventListener('touchend', event => {
+            const distance = startX - event.changedTouches[0].clientX;
+            if (Math.abs(distance) < 50) return;
+            if (distance > 0) nextButton.click(); else prevButton.click();
+        }, { passive: true });
+        carousel.addEventListener('keydown', event => {
+            if (event.key === 'ArrowRight') { event.preventDefault(); nextButton.click(); }
+            if (event.key === 'ArrowLeft') { event.preventDefault(); prevButton.click(); }
+            if (event.key === 'Home') { event.preventDefault(); currentIndex = 0; updateCarousel(); }
+            if (event.key === 'End') { event.preventDefault(); currentIndex = slides.length - 1; updateCarousel(); }
+        });
         updateCarousel();
     }
+
+    document.querySelectorAll('.accordion details').forEach(item => {
+        item.addEventListener('toggle', () => {
+            if (!item.open) return;
+            document.querySelectorAll('.accordion details').forEach(other => {
+                if (other !== item) other.open = false;
+            });
+        });
+    });
 });
