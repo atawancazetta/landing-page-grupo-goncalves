@@ -88,6 +88,7 @@ footer{padding:80px 0 26px;background:#071d15;color:var(--white);border-top:3px 
 }
 
 @media (max-width:800px){
+    .about-grid{grid-template-columns:minmax(0,1fr)}
     .about-media{width:min(100%,600px);margin-inline:auto}
     .about-media::before{inset:20px -10px -14px 20px}
     .experience-card{right:14px}
