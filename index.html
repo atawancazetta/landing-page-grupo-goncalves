@@ -5,10 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#0b291d">
     <meta name="description" content="Fornecedor de feno na região de Presidente Prudente: fardos para cavalos e gado, com produção própria, retirada no local ou frete negociado.">
+    <meta name="application-name" content="Grupo Gonçalves">
     <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://grupogoncalves.vercel.app/">
     <meta property="og:title" content="Fornecedor de Feno em Presidente Prudente | Grupo Gonçalves">
     <meta property="og:description" content="Venda de fardos de feno para cavalos e gado na região de Presidente Prudente, com produção própria e fornecimento confiável.">
-    <meta property="og:image" content="./assets/GrupoGoncalvesPreview.png">
+    <meta property="og:url" content="https://grupogoncalves.vercel.app/">
+    <meta property="og:image" content="https://grupogoncalves.vercel.app/assets/GrupoGoncalvesPreview.png">
     <meta property="og:image:alt" content="Grupo Gonçalves, fornecedor de feno na região de Presidente Prudente">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="pt_BR">
@@ -16,11 +19,11 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Fornecedor de Feno em Presidente Prudente | Grupo Gonçalves">
     <meta name="twitter:description" content="Venda de fardos de feno para cavalos e gado na região de Presidente Prudente, com produção própria e fornecimento confiável.">
-    <meta name="twitter:image" content="./assets/GrupoGoncalvesPreview.png">
+    <meta name="twitter:image" content="https://grupogoncalves.vercel.app/assets/GrupoGoncalvesPreview.png">
     <meta name="twitter:image:alt" content="Grupo Gonçalves, fornecedor de feno na região de Presidente Prudente">
     <title>Fornecedor de Feno em Presidente Prudente | Grupo Gonçalves</title>
-    <link rel="icon" type="image/png" href="./assets/icons/favicon_b.png">
-    <link rel="apple-touch-icon" href="./assets/icons/favicon_b.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon_b.png">
+    <link rel="apple-touch-icon" sizes="96x96" href="/assets/icons/favicon_b.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
@@ -30,28 +33,46 @@
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "Grupo Gonçalves",
-        "description": "Fornecedor de feno na região de Presidente Prudente, com produção própria e venda de fardos de feno para cavalos e gado.",
-        "telephone": "+55 18 99145-6393",
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Santo Anastácio",
-            "addressRegion": "SP",
-            "addressCountry": "BR"
-        },
-        "areaServed": [
+        "@graph": [
             {
-                "@type": "AdministrativeArea",
-                "name": "Região de Presidente Prudente"
+                "@type": "WebSite",
+                "@id": "https://grupogoncalves.vercel.app/#website",
+                "url": "https://grupogoncalves.vercel.app/",
+                "name": "Grupo Gonçalves",
+                "inLanguage": "pt-BR",
+                "publisher": {
+                    "@id": "https://grupogoncalves.vercel.app/#organization"
+                }
             },
             {
-                "@type": "Country",
-                "name": "Brasil"
+                "@type": "LocalBusiness",
+                "@id": "https://grupogoncalves.vercel.app/#organization",
+                "name": "Grupo Gonçalves",
+                "url": "https://grupogoncalves.vercel.app/",
+                "logo": "https://grupogoncalves.vercel.app/assets/LogoG.png",
+                "image": "https://grupogoncalves.vercel.app/assets/GrupoGoncalvesPreview.png",
+                "description": "Fornecedor de feno na região de Presidente Prudente, com produção própria e venda de fardos de feno para cavalos e gado.",
+                "telephone": "+55 18 99145-6393",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Santo Anastácio",
+                    "addressRegion": "SP",
+                    "addressCountry": "BR"
+                },
+                "areaServed": [
+                    {
+                        "@type": "AdministrativeArea",
+                        "name": "Região de Presidente Prudente"
+                    },
+                    {
+                        "@type": "Country",
+                        "name": "Brasil"
+                    }
+                ],
+                "sameAs": [
+                    "https://instagram.com/grupogoncalvesfeno"
+                ]
             }
-        ],
-        "sameAs": [
-            "https://instagram.com/grupogoncalvesfeno"
         ]
     }
     </script>
